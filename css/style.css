@@ -141,9 +141,10 @@ body {
     font-size: 18px;
     width: 240px;
 }
-
-.content {
+.content, .order{
     background-color: #ffefef;
+}
+.content {
     padding: 120px 0;
 }
 
@@ -223,4 +224,7 @@ body {
     font-family: GilroyMedium, sans-serif;
     color: rgb(51, 25, 7);
     line-height: 1.333;
+}
+.order{
+    padding: 97px 0 120px 0;
 }
