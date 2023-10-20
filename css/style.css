@@ -40,7 +40,7 @@ body {
     display: none;
 }
 
-.header, .main {
+.header, .main, .macaroons {
     background-color: #eba8b1;
 }
 
@@ -141,9 +141,11 @@ body {
     font-size: 18px;
     width: 240px;
 }
-.content, .order{
+
+.content, .order {
     background-color: #ffefef;
 }
+
 .content {
     padding: 120px 0;
 }
@@ -181,7 +183,7 @@ body {
 .content__advantage {
     display: grid;
     grid-template-columns: repeat(4, max-content);
-    grid-column-gap: 87px;
+    grid-column-gap: 80px;
 }
 
 .content__advantage-item {
@@ -197,7 +199,8 @@ body {
     justify-content: center;
     align-items: end;
 }
-.content__advantage-circle.maroon{
+
+.content__advantage-circle.maroon {
     background-color: #eba8b1;
 }
 
@@ -225,6 +228,65 @@ body {
     color: rgb(51, 25, 7);
     line-height: 1.333;
 }
-.order{
+
+.macaroons {
+    padding: 120px 0;
+}
+
+.macaroons__title {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 142px;
+    text-align: center;
+}
+
+.macaroons__items {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-column-gap: 27px;
+}
+
+.macaroons__item{
+    width: 261px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    padding:109px 21px 27px 11px;
+        border-radius: 20px;
+    position: relative;
+}
+.macaroons__item-img{
+    position: absolute;
+    top: -60px;
+    right: 36px;
+}
+.macaroons__item-title{
+    text-align: center;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+    margin-bottom: 26px;
+}
+.macaroons__item-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.macaroons__item-desc{
+        font-size: 15px;
+        font-family: Gilroy,sans-serif;
+        color: rgb(255, 255, 255);
+    margin-bottom: 16px;
+}
+.macaroons__item-btn{
+    width: 130px;
+    padding: 19px 19px 20px 19px;
+}
+
+
+
+
+
+
+
+.order {
     padding: 97px 0 120px 0;
 }
