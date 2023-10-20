@@ -7,6 +7,12 @@
     font-family: Gilroy;
     src: url("../fonts/Gilroy-Regular.ttf");
 }
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url("../fonts/Gilroy-ExtraBold.ttf");
+}
+
 @font-face {
     font-family: GilroyBold;
     src: url("../fonts/Gilroy-Bold.ttf");
@@ -23,7 +29,7 @@
 }
 
 body {
-    font-family: Gilroy, sans-serif;
+    font-family: Travolga, sans-serif;
 }
 
 .header__burger {
@@ -34,7 +40,7 @@ body {
     display: none;
 }
 
-.header {
+.header, .main {
     background-color: #eba8b1;
 }
 
@@ -43,7 +49,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -59,12 +65,14 @@ body {
     width: 315px;
     justify-content: space-between;
 }
-.menu .menu__list .menu__item{
+
+.menu .menu__list .menu__item {
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: all .5s ease;
 }
-.menu .menu__list .menu__item:hover{
+
+.menu .menu__list .menu__item:hover {
     border-bottom: 2px solid rgb(130, 19, 40);
     transform: scale(1.02);
 }
@@ -75,8 +83,144 @@ body {
     font-family: GilroyMedium, sans-serif;
     color: rgb(119, 11, 29);
 }
-.header__phone{
-        font-size: 16px;
-        font-family: GilroyBold,sans-serif;
-        color: rgb(255, 255, 255);
+
+.header__phone {
+    font-size: 16px;
+    font-family: GilroyBold, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.main {
+    padding: 127px 0 108px 0;
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.main__info {
+    max-width: 585px;
+}
+
+.main__title {
+    font-size: 55px;
+    color: rgb(255, 255, 255);
+    line-height: 1.091;
+    margin-bottom: 59px;
+}
+
+.main__text {
+    max-width: 350px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    line-height: 1.389;
+    margin-bottom: 80px;
+}
+
+.btn {
+    font-family: GilroyBold, sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: -moz-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    background-image: -webkit-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    background-image: -ms-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    border-radius: 30px;
+    border: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
+}
+
+.main__action-btn {
+    padding: 22px 22px 21px 22px;
+    font-size: 18px;
+    width: 240px;
+}
+
+.content {
+    background-color: #ffefef;
+    padding: 120px 0;
+}
+
+.content__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 78px;
+}
+
+.content__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.content__info-title {
+    max-width: 475px;
+    margin-bottom: 59px;
+    font-size: 45px;
+    color: rgb(51, 25, 7);
+    line-height: 1.222;
+}
+
+.content__info-text {
+    max-width: 402px;
+    font-size: 18px;
+    font-family: Gilroy, sans-serif;
+    color: rgb(51, 25, 7);
+    line-height: 1.556;
+    margin-bottom: 5px;
+}
+
+.content__advantage {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-column-gap: 87px;
+}
+
+.content__advantage-item {
+    max-width: 220px;
+}
+
+.content__advantage-circle {
+    border-radius: 50%;
+    background-color: #821328;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.content__advantage-circle.maroon{
+    background-color: #eba8b1;
+}
+
+.circle-text {
+    font-size: 60px;
+    font-family: GilroyExtraBold, sans-serif;
+    color: rgb(255, 255, 255);
+    height: 54px;
+}
+
+.circle-text.maroon {
+    color: rgb(130, 19, 40);
+}
+
+.content__advantage-title {
+    margin: 12px 0 20px 0;
+    font-size: 20px;
+    font-family: GilroyExtraBold, sans-serif;
+    color: rgb(51, 25, 7);
+}
+
+.content__advantage-text {
+    font-size: 15px;
+    font-family: GilroyMedium, sans-serif;
+    color: rgb(51, 25, 7);
+    line-height: 1.333;
 }
