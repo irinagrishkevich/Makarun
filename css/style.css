@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-Regular.ttf");
+}
+@font-face {
+    font-family: GilroyBold;
+    src: url("../fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url("../fonts/Gilroy-Medium.ttf");
+}
+
+@font-face {
+    font-family: Travolga;
+    src: url("../fonts/Tavolga.otf");
+}
+
+body {
+    font-family: Gilroy, sans-serif;
+}
+
+.header__burger {
+    display: none;
+}
+
+.menu__close {
+    display: none;
+}
+
+.header {
+    background-color: #eba8b1;
+}
+
+.header {
+    padding: 36px 0 25px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .menu__list {
+    list-style: none;
+    display: flex;
+    width: 315px;
+    justify-content: space-between;
+}
+.menu .menu__list .menu__item{
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+.menu .menu__list .menu__item:hover{
+    border-bottom: 2px solid rgb(130, 19, 40);
+    transform: scale(1.02);
+}
+
+.menu .menu__list .menu__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: GilroyMedium, sans-serif;
+    color: rgb(119, 11, 29);
+}
+.header__phone{
+        font-size: 16px;
+        font-family: GilroyBold,sans-serif;
+        color: rgb(255, 255, 255);
+}
