@@ -31,6 +31,7 @@
 body {
     font-family: Travolga, sans-serif;
     position: relative;
+    overflow-x: hidden;
 }
 
 .header__burger {
@@ -122,6 +123,8 @@ body {
 }
 
 .btn {
+    position: relative;
+    z-index: 9999;
     font-family: GilroyBold, sans-serif;
     color: rgb(255, 255, 255);
     background-image: -moz-linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
@@ -159,8 +162,8 @@ body {
     position: absolute;
     border: 1px solid #821328;
     transition: border;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     z-index: 1;
     border-radius: 50%;
     animation: pulse 3s infinite;
@@ -172,8 +175,8 @@ body {
     position: absolute;
     border: 1px solid #821328;
     transition: border;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     z-index: 1;
     border-radius: 50%;
     animation: pulse 3s infinite;
@@ -200,6 +203,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+.content__info-macaroon{
+    width: 100%;
 }
 
 .content__info-title {
@@ -237,7 +243,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: end;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
 }
 
 
@@ -246,7 +252,7 @@ body {
     font-family: GilroyExtraBold, sans-serif;
     color: rgb(255, 255, 255);
     height: 54px;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
 }
 
 
@@ -384,6 +390,8 @@ body {
     justify-content: start;
     align-items: flex-start;
     gap: 15px;
+    position: relative;
+    z-index: 4;
 }
 
 .order__product-subtitle {
@@ -566,7 +574,7 @@ body {
         transform: scale(1)
     }
     100% {
-        transform: scale(7);
+        transform: scale(3.5);
         opacity: 0
     }
 }
