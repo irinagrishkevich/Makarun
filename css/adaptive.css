@@ -138,3 +138,136 @@
         padding: 99px 0;
     }
 }
+@media screen and (max-width: 579px){
+    .container{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .menu{
+        display: none;
+    }
+    .header__burger{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        cursor: pointer;
+    }
+    .menu.open{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 40px;
+        margin: 0;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+        position: fixed;
+        z-index: 999999;
+    }
+    .menu .menu__list{
+        padding: 100px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        width: 158px;
+    }
+
+    .menu .menu__list .menu__link{
+        font-size: 30px;
+    }
+    .header__container{
+        flex-direction: row-reverse;
+        gap: 0;
+        justify-content: space-between;
+    }
+    .order{
+        padding: 99px 0 77px 0;
+    }
+    .order__info-img-macaroon, .order__product-img-straw{
+        display: none;
+    }
+    .order__info-img-straw{
+        top: -505px;
+        left: -71px;
+    }
+    .order__info{
+        padding:0;
+    }
+    .order__info-text{
+        margin: 45px 0 60px 0;
+    }
+    .order__info-title{
+        font-size: 30px;
+    }
+    .main__title{
+            font-size: 32px;
+        text-align: center;
+            line-height: 1.25;
+        }
+    .main__text, .content__info-text{
+            font-size: 16px;
+            line-height: 1.438;
+            text-align: center;
+    }
+    .order__info-text{
+        font-size: 16px;
+        line-height: 1.438;
+    }
+    .main__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content__info-title, .macaroons__title, .order__info-title{
+            font-size: 30px;
+    }
+    .content__advantage-title{
+            font-size: 18px;
+    }
+    .content__advantage-text{
+            font-size: 13px;
+            line-height: 1.385;
+    }
+    .order__product-input{
+        width: 344px;
+    }
+    .order__product-btn{
+        width: 344px;
+    }
+    .footer{
+        padding: 50px 0;
+    }
+    .footer__info{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,1fr);
+        align-items: flex-start;
+        justify-items: center;
+        row-gap: 16px;
+    }
+    .footer__instagram-img{
+        margin-left: 0;
+    }
+    .footer__logo-img{
+        order: 1;
+    }
+    .footer__instagram-img{
+        order: 3;
+    }
+    .footer__title{
+        order: 4;
+        margin-top: 0;
+    }
+    .footer__phone{
+        order: 2;
+        margin-top: 0;
+    }
+    .footer__text{
+        order: 5;
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 401px){
+
+}

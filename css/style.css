@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smoothf;
 }
 
 @font-face {
@@ -32,6 +33,9 @@ body {
     font-family: Travolga, sans-serif;
     position: relative;
     overflow-x: hidden;
+}
+a{
+    cursor: pointer;
 }
 
 .header__burger {
@@ -86,6 +90,9 @@ body {
     color: rgb(119, 11, 29);
 }
 
+.menu.close{
+    display: none;
+}
 .header__phone {
     font-size: 16px;
     font-family: GilroyBold, sans-serif;
@@ -454,13 +461,14 @@ body {
 }
 
 .footer__info {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,max-content);
+    grid-template-rows: repeat(2,34px);
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
-
-.footer__logo {
-    margin-top: 8px;
+.footer__instagram-img{
+    margin-left: 32%;
 }
 
 .footer__text {
@@ -473,9 +481,6 @@ body {
     -ms-transform: matrix(1, 0, 0, 0.99837443537405, 0, 0);
 }
 
-.footer__instagram {
-    text-align: center;
-}
 
 .footer__title {
     margin-top: 15px;
@@ -562,8 +567,13 @@ body {
     margin-top: -16px;
 }
 
-.burger {
+.header__burger {
     display: none;
+}
+.burger__line{
+    width: 40px;
+    height: 2px;
+    background-color: #821328;
 }
 .close {
     display: none;
