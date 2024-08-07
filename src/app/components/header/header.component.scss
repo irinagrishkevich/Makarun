@@ -1,0 +1,151 @@
+a{
+  cursor: pointer;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header__burger {
+  display: none;
+}
+
+.menu__close {
+  display: none;
+}
+.header{
+  background-color: #eba8b1;
+}
+
+.header {
+  padding: 36px 0 25px 0;
+}
+
+.burger__line{
+  width: 40px;
+  height: 2px;
+  background-color: #821328;
+}
+.close {
+  display: none;
+}
+
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu{
+  margin-right: 96px;
+}
+
+.menu .menu__list {
+  list-style: none;
+  display: flex;
+  width: 315px;
+  justify-content: space-between;
+}
+
+.menu .menu__list .menu__item {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all .5s ease;
+}
+
+.menu .menu__list .menu__item:hover {
+  border-bottom: 2px solid rgb(130, 19, 40);
+  transform: scale(1.02);
+}
+
+.menu .menu__list .menu__link {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: GilroyMedium, sans-serif;
+  color: rgb(119, 11, 29);
+}
+
+.menu.close{
+  display: none;
+}
+.header__phone {
+  font-size: 16px;
+  font-family: GilroyBold, sans-serif;
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1159px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }}
+@media screen and (max-width: 769px) {
+  .header__phone{
+    display: none;
+  }
+  .header__container{
+    justify-content: flex-start;
+    gap: 103px;
+  }
+}
+@media screen and (max-width: 643px){
+  .menu{
+    margin-right: 0;
+  }
+
+}
+@media screen and (max-width: 579px){
+  .menu{
+    display: none;
+  }
+  .header__burger{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .menu.open{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    margin: 0;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    z-index: 999999;
+    transition: all 0.4s ease;
+  }
+  .menu__close.close{
+    display: block;
+    position: absolute;
+    left: 30px;
+    top:30px;
+    fill: #821328;
+  }
+  .menu__close.close svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .menu .menu__list{
+    padding: 100px 0;
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    width: 158px;
+  }
+
+  .menu .menu__list .menu__link{
+    font-size: 30px;
+  }
+  .header__container{
+    flex-direction: row-reverse;
+    gap: 0;
+    justify-content: space-between;
+  }
+}
