@@ -1,0 +1,16 @@
+<div class="macaroons__item" >
+    <img src="assets/img/{{product.img}}" class="macaroons__item-img" alt="macaroon">
+    <div class="macaroons__item-title">{{product.name}}</div>
+    <div class="macaroons__item-order">
+        <div class="macaroons__item-text">
+            <div class="macaroons__item-desc">1 шт.</div>
+            <div class="macaroons__item-desc">{{ product.price | number:'1.2-2' }} руб.</div>
+        </div>
+        <div class="macaroons__item-action">
+            <button class="btn macaroons__item-btn"
+                    appBackgroundIsChange
+                    [hoverBackground] = "'green'"
+                    (click)="addProductToCart()">Заказать</button>
+        </div>
+    </div>
+</div>

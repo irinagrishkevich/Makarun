@@ -6,7 +6,8 @@
         Macaroon!
       </div>
       <div class="main__action">
-        <button class="btn main__action-btn" (click)="scrollTo(productsElement)">Выбрать макарун</button>
+        <button class="btn main__action-btn" appBackgroundIsChange
+                [hoverBackground] = "'green'" (click)="scrollTo(productsElement)">Выбрать макарун</button>
       </div>
     </div>
     <div class="main__img"><img src="assets/img/main-img.png" class="main__img-macaroon" alt="macaroons"></div>
@@ -28,34 +29,18 @@
         <img src="assets/img/content-img.png" class="content__info-macaroon" alt="macaroon">
       </div>
     </div>
-    <div class="content__advantage">
-      <div class="content__advantage-item" *ngFor="let advantage of advantages; let i = index">
-        <div class="content__advantage-circle">
-          <div class="circle-text">{{i+1}}</div>
-        </div>
-        <div class="content__advantage-title">{{advantage.title}}</div>
-        <div class="content__advantage-text">{{advantage.text}}</div>
-      </div>
-    </div>
+
+      <advantage [advantages]="advantages">
+
+      </advantage>
+
   </div>
 </section>
 <section class="macaroons" id="macaroonsElement" #productsElement>
   <div class="container macaroons__container">
     <h2 class="macaroons__title">Выберите свой макарун</h2>
     <div class="macaroons__items">
-      <div class="macaroons__item" *ngFor="let product of products; let i = index">
-        <img src="assets/img/{{product.img}}" class="macaroons__item-img" alt="macaroon {{i+1}}">
-        <div class="macaroons__item-title">{{product.name}}</div>
-        <div class="macaroons__item-order">
-          <div class="macaroons__item-text">
-            <div class="macaroons__item-desc">1 шт.</div>
-            <div class="macaroons__item-desc">{{product.price}} руб.</div>
-          </div>
-          <div class="macaroons__item-action">
-            <button class="btn macaroons__item-btn" (click)="addToCart(product, orderElement)">Заказать</button>
-          </div>
-        </div>
-      </div>
+      <product *ngFor="let product of products;" [product]="product"(addToCartEvent)="addToCart($event, orderElement)"></product>
     </div>
   </div>
 </section>
@@ -76,8 +61,20 @@
           <input class="order__product-input big-margin" name="choice" [(ngModel)]="formValues.productTitle" placeholder="Напишите, что хотите заказать...">
           <div class="order__product-subtitle">Заполните данные для заказа</div>
           <input class="order__product-input" name="name" [(ngModel)]="formValues.name" placeholder="Ваше имя">
-          <input class="order__product-input" name="number" [(ngModel)]="formValues.phone"  placeholder="+375 (__) ___ - __ - __">
-          <button type="submit" class="order__product-btn btn" (click)="createOrder()">Оформить заказ</button>
+          <input
+                  class="order__product-input"
+                  type="tel"
+                  name="number"
+                  [(ngModel)]="formValues.phone"
+                  [ngModel]="formValues.phone | phoneNumber"
+                  (ngModelChange)="onPhoneInputChange($event)"
+                  placeholder="+375 (__) ___-__-__"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="16"
+          />
+
+          <button appBackgroundIsChange  type="submit" class="order__product-btn btn" (click)="createOrder()">Оформить заказ</button>
         </form>
         <img src="assets/img/order-straw-2.png" class="order__product-img-straw" alt="strawberry">
       </div>
@@ -85,8 +82,9 @@
   </div>
 </section>
 <div class="present" *ngIf="showPresent">
-  <img src="assets/img/present.png" class="present-img" alt="present" >
+  <img src="assets/img/cart.png" class="present-img" alt="present" >
   <div class="present__popup">
-    Оформите заказ и получите подарок!
+    {{cartService.total | number:'1.2-2'}} руб.
   </div>
+  <span class="count-product">{{cartService.count}}</span>
 </div>

@@ -1,0 +1,9 @@
+<div class="content__advantage">
+    <div class="content__advantage-item" *ngFor="let advantage of advantages; let i = index">
+        <div class="content__advantage-circle" >
+            <div class="circle-text">{{ i + 1 }}</div>
+        </div>
+        <div class="content__advantage-title">{{advantage.title}}</div>
+        <div class="content__advantage-text">{{advantage.text | textTransform}}</div>
+    </div>
+</div>
