@@ -1,38 +1,24 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ProductType} from "./types/product.type";
+import {AdvantageType} from "./types/advantage.type";
+import {ProductService} from "./services/product.service";
+import {CartService} from "./services/cart.service";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
     title: string = 'Macaroons';
 
-    showPresent: boolean = false;
+    showPresent: boolean = true;
 
-    public products: ProductType[] = [{
-        name: 'Макарун с малиной',
-        price: 1.70,
-        img: 'macaroon1.png'
-    },
-        {
-            name: 'Макарун с манго',
-            price: 1.70,
-            img: 'macaroon2.png'
-        },
-        {
-            name: 'Пирог с ванилью',
-            price: 1.70,
-            img: 'macaroon3.png'
-        },
-        {
-            name: 'Пирог с фисташками',
-            price: 1.70,
-            img: 'macaroon4.png'
-        }]
-    public advantages = [{
+    public products: ProductType[] = []
+
+    public advantages:AdvantageType[]  = [{
         title: 'Лучшие продукты',
         text: 'Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители.'
     },
@@ -54,8 +40,20 @@ export class AppComponent implements OnInit, AfterViewInit {
         name: '',
         phone: ''
     }
+    onPhoneInputChange(event: string) {
+        if (!event.startsWith('+375')) {
+            this.formValues.phone = '+375';
+        } else {
+            this.formValues.phone = '+375' + event.slice(4).replace(/\D/g, '').slice(0, 9);
+        }
+    }
 
-    ngOnInit(): void { }
+    constructor(private productService: ProductService,public cartService: CartService) {
+    }
+
+    ngOnInit(): void {
+    this.products = this.productService.getProducts();
+    }
 
     ngAfterViewInit(): void { }
 
@@ -65,11 +63,17 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     public addToCart(product: ProductType, target: HTMLElement): void {
         this.scrollTo(target)
-        this.formValues.productTitle = product.name.toUpperCase();
+        this.formValues.productTitle += product.name.toUpperCase() + ' ';
+        this.cartService.count++;
+        this.cartService.total += product.price;
+        const countProductElement = document.querySelector('.count-product') as HTMLElement;
+        if (countProductElement && this.cartService.count >= 1) {
+            countProductElement.style.display = 'flex';
+        }
     }
     public createOrder(): void {
         if(!this.formValues.productTitle) {
-            alert('Введите название пиццы');
+            alert('Выберите продукт');
             return
         }
         if (!this.formValues.name) {
@@ -88,6 +92,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             phone: ''
         }
     }
+
 
 }
 
